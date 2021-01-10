@@ -24,6 +24,39 @@ p5_DisableDLCUnlockMessages: &p5_DisableDLCUnlockMessages
     
 
 # Game: Persona 5
+# Subject: P5 Modding Community Patches
+# Author: DeathChaos
+# Ported: Whitehawkx
+p5_CommunityPatches: &p5_CommunityPatches
+    # Force Single GAP Combat Animations
+    # Break Comparison with split "a" GAP file so it is always false
+    - [ be32, 0x6760e0, 0x3BE00000 ]
+    - [ be32, 0x67625c, 0x3BE00000 ]
+    # Prevent "b" GAP files from loading
+    - [ be32, 0x6799e4, 0x60000000 ]
+    - [ be32, 0x679a00, 0x60000000 ]
+    - [ be32, 0x679a0c, 0x60000000 ]
+    - [ be32, 0x679a18, 0x60000000 ]
+    - [ be32, 0x679a24, 0x60000000 ]
+    # Prevent "b" GAP files from loading (alt)
+    - [ be32, 0x679c08, 0x60000000 ]
+    - [ be32, 0x679c28, 0x60000000 ]
+    - [ be32, 0x679c30, 0x60000000 ]
+    - [ be32, 0x679c3c, 0x60000000 ]
+    - [ be32, 0x679c48, 0x60000000 ]
+    # Forcibly enable motionse.dat/acb on all enemies
+    - [ be32, 0x02d8ec, 0x38600001 ] # li   param_1,0x1
+    - [ be32, 0x02d94c, 0x38600001 ] # li   param_1,0x1
+    - [ be32, 0x02d968, 0x3860FFFF ] # li   param_1,-1
+    - [ be32, 0x02d9d4, 0x3860001E ] # li   param_1,0x1E
+    # Disable Player Swordtrack loading
+    - [ be32, 0x02659c, 0x38600000 ] # li   param_1,0x0
+    # Boss voice stuff
+    - [ be32, 0x06ad0ac, 0x281c00e6 ] # cmplwi   r28,0xe6
+    - [ be32, 0x06ad0b0, 0x41810878 ] # bgt   LAB_006a9028
+  
+
+# Game: Persona 5
 # Subject: Disable blur
 # Author: TGEnigma, ruipin, kd-11, Whitehawkx
 p5_DisableBlur: &p5_DisableBlur
@@ -70,6 +103,7 @@ p5_Disable100PctDistortion: &p5_Disable100PctDistortion
 PPU-d0b4d4ba47cab3d5d8328ade1af75f0ae4861488: *p5_IntroSkip
 PPU-d0b4d4ba47cab3d5d8328ade1af75f0ae4861488: *p5_60fps
 PPU-d0b4d4ba47cab3d5d8328ade1af75f0ae4861488: *p5_DisableDLCUnlockMessages
+PPU-d0b4d4ba47cab3d5d8328ade1af75f0ae4861488: *p5_CommunityPatches
 PPU-d0b4d4ba47cab3d5d8328ade1af75f0ae4861488: *p5_DisableBlur
 PPU-d0b4d4ba47cab3d5d8328ade1af75f0ae4861488: *p5_DisableDistortion
 PPU-d0b4d4ba47cab3d5d8328ade1af75f0ae4861488: *p5_Disable100PctDistortion
