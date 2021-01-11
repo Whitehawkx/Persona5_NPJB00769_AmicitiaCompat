@@ -2,14 +2,16 @@
 
 # Game: Persona 5
 # Subject: Intro skip
-# Author: TGE, Whitehawkx
+# Author: TGE
+# Ported: Whitehawkx
 p5_IntroSkip: &p5_IntroSkip
     - [ be32, 0x0055AE00, 0x60000000 ]
     
 
 # Game: Persona 5
 # Subject: 60 fps
-# Author: TGE, Whitehawkx
+# Author: TGE
+# Ported: Whitehawkx
 p5_60fps: &p5_60fps
     - [ be32, 0x00010268, 0x9061009C ] # set update rate to 60 -> r3, 0xE0+var_44(r1)
     - [ be32, 0x009004E4, 0x60000000 ] # nop cellGcmSetSecondVFrequency
@@ -18,7 +20,8 @@ p5_60fps: &p5_60fps
 
 # Game: Persona 5
 # Subject: Disable DLC messages
-# Author: TGE, Whitehawkx
+# Author: TGE
+# Ported: Whitehawkx
 p5_DisableDLCUnlockMessages: &p5_DisableDLCUnlockMessages
     - [ be32, 0x00197948, 0x4E800020 ]
     
@@ -58,7 +61,8 @@ p5_CommunityPatches: &p5_CommunityPatches
 
 # Game: Persona 5
 # Subject: Disable blur
-# Author: TGEnigma, ruipin, kd-11, Whitehawkx
+# Author: TGEnigma, ruipin, kd-11
+# Ported: Whitehawkx
 p5_DisableBlur: &p5_DisableBlur
     - [ be32, 0x00FEBC0A, 0x9E001700 ]
     - [ be32, 0x00FEBC0E, 0xC801001D ]
@@ -72,7 +76,8 @@ p5_DisableBlur: &p5_DisableBlur
 
 # Game: Persona 5
 # Subject: Disable Normal Distortion Filter [<=99% Alert & Velvet Room]
-# Author: TGEnigma, ruipin, kd-11, Whitehawkx
+# Author: TGEnigma, ruipin, kd-11
+# Ported: Whitehawkx
 p5_DisableDistortion: &p5_DisableDistortion
     - [ be32, 0x00FE07B8, 0x9E001700 ]
     - [ be32, 0x00FE07BC, 0xC801001D ]
@@ -86,7 +91,8 @@ p5_DisableDistortion: &p5_DisableDistortion
 
 # Game: Persona 5
 # Subject: Disable Angry Distortion Filter [100% Alert]
-# Author: TGEnigma, ruipin, kd-11, Whitehawkx
+# Author: TGEnigma, ruipin, kd-11
+# Ported: Whitehawkx
 p5_Disable100PctDistortion: &p5_Disable100PctDistortion
     - [ be32, 0x00FE07B8, 0x9E001700 ]
     - [ be32, 0x00FE07BC, 0xC801001D ]
